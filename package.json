@@ -2,12 +2,12 @@
   "name": "calculator",
   "version": "0.1.0",
   "private": true,
-  "homepages": "https://sumukhah.github.io/Calculator",
+  "homepage": "https://sumukhah.github.io/calculator",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "0.9.5"
+    "react-scripts": "2.0.0"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1"
@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preapply": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
