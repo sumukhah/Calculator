@@ -1,0 +1,36 @@
+.Calculator {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    background: #90ee90 ;
+}
+
+.container {
+    margin: auto;
+    height: auto;
+    border-radius: 15px;
+    border-block-end-color: black;
+    overflow: hidden;
+    box-shadow: 0 50 10px 0 rgba(153, 153, 153, .5);
+}
+
+.grid {
+    display: grid;
+    background: dimgray;
+    grid-gap: 5px;
+    grid-template-columns: 100px 100px 100px 100px;
+}
+
+.ResultScreen {
+    height:100px;
+    background:	dimgray;
+    padding: 25px 0px 10px 00px;
+}
+
+@media all and (max-width: 400px) {
+    .grid {
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+}
