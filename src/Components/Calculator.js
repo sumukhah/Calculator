@@ -21,7 +21,7 @@ const DisplayKeys = [
   {text: '0'},
   {text: '.'},
   {text: '-', type: 'Operator'},
-  {text: '√', type: 'Operator'},
+  {text: '%', type: 'Operator'},
   {text: '^', type: 'operator'},
   {text: '÷', type: 'Operator'},
   {text: '=', type: 'Operator'},
@@ -46,7 +46,7 @@ class Calculator extends React.Component {
       <div className="Calculator">
         <div className="container">
              <i className="github square icon big"></i>
-          i can catch only mouse 
+           
           <div className='ResultScreen'>
             <Result output={this.state.secondNumber!=''?this.state.secondNumber:this.state.firstNumber}/>
           </div>

@@ -13,7 +13,7 @@
     border-radius: 15px;
     border-block-end-color: black;
     overflow: hidden;
-    box-shadow: 0 50 10px 0 rgba(153, 153, 153, .5);
+    box-shadow: 0 50 10px 0  rgb(255, 106, 0);
 }
 
 .grid {
@@ -25,7 +25,7 @@
 
 .ResultScreen {
     height:100px;
-    background:	dimgray;
+    background:	rgb(130, 132, 135);
     padding: 25px 0px 10px 00px;
 }
 

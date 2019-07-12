@@ -22,9 +22,10 @@ const CalcLogic = (text, state) => {
      firstNumber = 0 - firstNumber
   }
 
-  else if(text=='√') {
-    operatorSelected = '^'
-    secondNumber==0.5?firstNumber=secondNumber:secondNumber=0.5
+  else if (text=='%') {
+    firstNumber = firstNumber/100;
+    secondNumber = ''
+    operatorSelected = ''
   }
 
   else
@@ -65,7 +66,7 @@ const CalcLogic = (text, state) => {
           firstNumber = firstNumber**secondNumber;
           secondNumber = ''
           break;
-
+        
         case '=':
           return {operatorSelected:'', firstNumber, secondNumber:''}
           
