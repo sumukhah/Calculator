@@ -42,7 +42,6 @@ const CalcLogic = (text, state) => {
   secondNumber = Number(secondNumber);
 
   if (operatorSelected==='÷' && secondNumber===0) {
-    window.alert('error');
      firstNumber = 'Infinity';
      secondNumber = ''
   }
