@@ -48,7 +48,7 @@ class Calculator extends React.Component {
              <i className="github square icon big"></i>
            
           <div className='ResultScreen'>
-            <Result output={this.state.secondNumber!=''?this.state.secondNumber:this.state.firstNumber}/>
+            <Result output={this.state.secondNumber!=='' && this.state.operatorSelected!==''?this.state.secondNumber:this.state.firstNumber}/>
           </div>
         
           <div className="grid">

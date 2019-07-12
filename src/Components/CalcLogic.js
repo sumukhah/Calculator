@@ -4,7 +4,7 @@ const CalcLogic = (text, state) => {
 
   let {operatorSelected, firstNumber, secondNumber} = state;
   
-  if (text%1==0 || text==='.') {
+  if (text%1===0 || text==='.') {
     operatorSelected===''? firstNumber=firstNumber+text:secondNumber=secondNumber+text;
   }
 
@@ -22,7 +22,7 @@ const CalcLogic = (text, state) => {
      firstNumber = 0 - firstNumber
   }
 
-  else if (text=='%') {
+  else if (text==='%') {
     firstNumber = firstNumber/100;
     secondNumber = ''
     operatorSelected = ''
@@ -33,17 +33,26 @@ const CalcLogic = (text, state) => {
      operatorSelected = text==='='?operatorSelected:text;
   }
 
+
+
   if  (text==='=' || operatorOverload)
   {
 
   firstNumber = Number(firstNumber);
   secondNumber = Number(secondNumber);
-  
-  if (firstNumber && secondNumber) {
+
+  if (operatorSelected==='÷' && secondNumber===0) {
+    window.alert('error');
+     firstNumber = 'Infinity';
+     secondNumber = ''
+  }
+
+  else if (firstNumber && secondNumber) {
   switch (operatorSelected) {
   
     case '+':
         firstNumber = firstNumber+secondNumber;
+        // operatorSelected = ''
         secondNumber = ''
         break;
     
@@ -60,6 +69,7 @@ const CalcLogic = (text, state) => {
         case '÷':
           firstNumber = firstNumber/secondNumber;
           secondNumber = ''
+          operatorSelected = ''
           break;
 
         case '^':
@@ -69,7 +79,9 @@ const CalcLogic = (text, state) => {
         
         case '=':
           return {operatorSelected:'', firstNumber, secondNumber:''}
-          
+        
+        default :
+          return firstNumber = window.alert('error')
 
   }}
   }
