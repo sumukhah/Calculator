@@ -41,17 +41,15 @@ const CalcLogic = (text, state) => {
   firstNumber = Number(firstNumber);
   secondNumber = Number(secondNumber);
 
-  if (operatorSelected==='÷' && secondNumber===0) {
-     firstNumber = 'Infinity';
-     secondNumber = ''
-  }
-
-  else if (firstNumber && secondNumber) {
+  // if (operatorSelected==='÷' && secondNumber===0) {
+  //    firstNumber = 'Infinity';
+  //    secondNumber = ''
+  // }
+ if (firstNumber!=='' && secondNumber!=='') {
   switch (operatorSelected) {
   
     case '+':
         firstNumber = firstNumber+secondNumber;
-        // operatorSelected = ''
         secondNumber = ''
         break;
     
@@ -66,7 +64,7 @@ const CalcLogic = (text, state) => {
           break;
         
         case '÷':
-          firstNumber = firstNumber/secondNumber;
+          firstNumber = secondNumber!==0?(firstNumber/secondNumber):'error';
           secondNumber = ''
           operatorSelected = ''
           break;
@@ -76,11 +74,13 @@ const CalcLogic = (text, state) => {
           secondNumber = ''
           break;
         
-        case '=':
-          return {operatorSelected:'', firstNumber, secondNumber:''}
+        // case '=':
+        //   return {operatorSelected:'', firstNumber, secondNumber:''}
         
         default :
-          return firstNumber = window.alert('error')
+           firstNumber = 'Math error';
+           secondNumber = '';
+
 
   }}
   }
