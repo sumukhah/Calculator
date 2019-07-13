@@ -42,7 +42,7 @@ const CalcLogic = (text, state) => {
   secondNumber = Number(secondNumber);
 
  
- if (firstNumber!=='' && (secondNumber!='' || secondNumber===0) ) {
+ if (firstNumber!=='' && secondNumber!=='' && operatorSelected!=='') {
   switch (operatorSelected) {
   
     case '+':
