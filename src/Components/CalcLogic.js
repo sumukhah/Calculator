@@ -41,11 +41,8 @@ const CalcLogic = (text, state) => {
   firstNumber = Number(firstNumber);
   secondNumber = Number(secondNumber);
 
-  // if (operatorSelected==='÷' && secondNumber===0) {
-  //    firstNumber = 'Infinity';
-  //    secondNumber = ''
-  // }
- if (firstNumber!=='' && secondNumber!=='') {
+ 
+ if (firstNumber!=='' && secondNumber!='') {
   switch (operatorSelected) {
   
     case '+':
