@@ -23,7 +23,7 @@ const CalcLogic = (text, state) => {
   }
 
   else if (text==='DEL') {
-    firstNumber = toString(firstNumber).substring(0,firstNumber.length -1);
+    firstNumber = firstNumber.substring(0,firstNumber.length -1);
     secondNumber = ''
     operatorSelected = ''
   }
