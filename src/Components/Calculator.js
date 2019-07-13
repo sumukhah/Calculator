@@ -12,7 +12,7 @@ const DisplayKeys = [
   {text: '4'},
   {text: '5'},
   {text: '6'},
-  {text: 'x', type: 'Operator'},
+  {text: 'DEL', type: 'Operator'},  
   {text: '1'},
   {text: '2'},
   {text: '3'},
@@ -21,8 +21,9 @@ const DisplayKeys = [
   {text: '0'},
   {text: '.'},
   {text: '-', type: 'Operator'},
-  {text: '%', type: 'Operator'},
+  
   {text: '^', type: 'operator'},
+  {text: 'x', type: 'Operator'},
   {text: '÷', type: 'Operator'},
   {text: '=', type: 'Operator'},
 ]

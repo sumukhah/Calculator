@@ -22,8 +22,8 @@ const CalcLogic = (text, state) => {
      firstNumber = 0 - firstNumber
   }
 
-  else if (text==='%') {
-    firstNumber = firstNumber/100;
+  else if (text==='DEL') {
+    firstNumber = firstNumber.substring(0,firstNumber.length - 1);
     secondNumber = ''
     operatorSelected = ''
   }
