@@ -1,4 +1,4 @@
-# https://sumukhah.github.io/Calculator/  <i> check this </i>
+<b> https://sumukhah.github.io/Calculator/ </b>  <i> check this </i>
 
 # React Calculator
 
