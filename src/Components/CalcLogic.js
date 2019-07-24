@@ -1,14 +1,8 @@
 const CalcLogic = (text, state) => {
   
-  let operatorOverload;
-
   let {operatorSelected, firstNumber, secondNumber} = state;
-  
-  if (text%1===0 || text==='.') {
-    operatorSelected===''? firstNumber=firstNumber+text:secondNumber=secondNumber+text;
-  }
+  let SecondOperator;
 
-  else 
   if (text==='AC') {
     return  {
       operatorSelected : '',
@@ -16,76 +10,58 @@ const CalcLogic = (text, state) => {
       secondNumber : '',
     };
   }
-  
-  else 
-  if (text==='+/-') {
-     firstNumber = 0 - firstNumber
-  }
 
   else if (text==='DEL') {
     firstNumber = firstNumber.substring(0,firstNumber.length -1);
-    secondNumber = ''
-    operatorSelected = ''
   }
+  
+  else if (text%1===0 || text==='.') {
+      operatorSelected===''? firstNumber=firstNumber+text:secondNumber=secondNumber+text
+    }
+   
+  else if (text==='+/-') {
+      firstNumber = 0 - firstNumber
+    }
 
-  else
-   { operatorOverload = text!=='='&&operatorSelected!==''?text:null
-     operatorSelected = text==='='?operatorSelected:text;
-  }
+  else if (text!=='=')
+    {
+      operatorSelected?(SecondOperator=text):(operatorSelected=text)
+    }
 
+  if ((text==='=' && secondNumber!=='')||(SecondOperator&&secondNumber!=='')) {
+  firstNumber = Number(firstNumber)
+  secondNumber = Number(secondNumber)
+  console.log(SecondOperator) 
 
-
-  if  (text==='=' || operatorOverload)
-  {
-
-  firstNumber = Number(firstNumber);
-  secondNumber = Number(secondNumber);
-
- 
- if (firstNumber!=='' && secondNumber!=='' && operatorSelected!=='') {
   switch (operatorSelected) {
   
     case '+':
         firstNumber = firstNumber+secondNumber;
-        secondNumber = ''
         break;
-    
-        case '-':
+    case '-':
           firstNumber = firstNumber-secondNumber;
-          secondNumber = ''
           break;
-        
-        case 'x':
+    case 'x':
           firstNumber = firstNumber*secondNumber;
-          secondNumber = ''
           break;
         
-        case '÷':
-          firstNumber = secondNumber!==0?(firstNumber/secondNumber):'error';
-          secondNumber = ''
-          operatorSelected = ''
+    case '÷':
+          firstNumber = firstNumber/secondNumber;
           break;
-
-        case '^':
+    case '^':
           firstNumber = firstNumber**secondNumber;
-          secondNumber = ''
           break;
-        
-        // case '=':
-        //   return {operatorSelected:'', firstNumber, secondNumber:''}
-        
-        default :
+    default :
            firstNumber = 'Math error';
-           secondNumber = '';
-
-
-  }}
+  }
+  secondNumber = ''
+  operatorSelected = SecondOperator?SecondOperator:''
+  // SecondOperator
   }
 
+
+  // console.log(SecondOperator)  
   return state = {operatorSelected, firstNumber, secondNumber};
-
 }
-
- 
 
 export default CalcLogic

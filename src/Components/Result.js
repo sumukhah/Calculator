@@ -3,7 +3,7 @@ import styles from './Result.css'
 
 const Result = (props) => {
     return <div className='Result'>
-        {props.output || 0}
+        {props.output!==''?props.output:0}
     </div>
 }
 
