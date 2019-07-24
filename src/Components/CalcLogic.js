@@ -12,7 +12,7 @@ const CalcLogic = (text, state) => {
   }
 
   else if (text==='DEL') {
-    firstNumber = String(firstNumber).substring(0,firstNumber.length -1);
+    secondNumber?secondNumber=String(secondNumber).substring(0, secondNumber.length-1):(firstNumber = String(firstNumber).substring(0,firstNumber.length -1))
   }
   
   else if (text%1===0 || text==='.') {
